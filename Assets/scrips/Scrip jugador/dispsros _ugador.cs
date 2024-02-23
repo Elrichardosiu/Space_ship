@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class dispsros_ugador : MonoBehaviour
 {
-    public float Movimientoejex;
-    public float Movimientoejey;
-    public float Movimientoejez;
-
-    public float Velocidad_disparo = 0.5f;
+    public GameObject BalaInicio;
+    public GameObject BalaPrefab;
+    public float BalaVelocidad;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +17,13 @@ public class dispsros_ugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      if (Input.GetButton("Fire1"))
+        {
+            GameObject BalaTemporal = Instantiate(BalaPrefab, BalaInicio.transform.position, BalaInicio.transform.rotation) as GameObject;
+            Rigidbody rb = BalaTemporal.GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * BalaVelocidad);
+            Destroy(BalaTemporal, 5.0f);
+        }
         
     }
 }
