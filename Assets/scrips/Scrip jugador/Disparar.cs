@@ -21,6 +21,7 @@ public class Disparar : MonoBehaviour
 
             if (Input.GetButton("Fire1"))
             {
+
                 GameObject BalaTemporal = Instantiate(BalaPrefab, BalaInicio.transform.position, BalaInicio.transform.rotation) as GameObject;
                 Rigidbody rb = BalaTemporal.GetComponent<Rigidbody>();
                 rb.AddForce(transform.forward * BalaVelocidad);
