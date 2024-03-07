@@ -11,8 +11,8 @@ public class Movimiendo_adelante_eterno : MonoBehaviour
     public float speedV;
     float yaw;
     float pitch;
-    float desacelerar = 0.2f;
-    float acelerar = 0.2f;
+    float desacelerar = 0.1f;
+    float acelerar = 0.1f;
 
     public float velocidad = 0.1f;
     // Start is called before the first frame update
@@ -38,13 +38,13 @@ public class Movimiendo_adelante_eterno : MonoBehaviour
         {
             Debug.Log("acelera");
             velocidad= velocidad + acelerar;
-            transform.Rotate(0.0f, 0.0f, 90.0f * Time.deltaTime);
+            transform.Rotate(0.0f, 0.0f, 0.0f);
         }
-        else if (velocidad >0.9f && Input.GetKeyDown("e"))
+        else if (velocidad >= 0.1f && Input.GetKeyDown("e"))
         {
             Debug.Log("disminuye");
             velocidad = velocidad - desacelerar;
-            transform.Rotate(0.0f, 0.0f, -90.0f * Time.deltaTime);
+            transform.Rotate(0.0f, 0.0f, 0.0f);
         }
        /* if(Input.GetKeyDown("w"))
         {
